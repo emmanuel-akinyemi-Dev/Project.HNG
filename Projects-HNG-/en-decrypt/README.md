@@ -1,50 +1,65 @@
-# Welcome to your Expo app 👋
+# React Native Encryption & Decryption
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This project demonstrates a **custom encryption and decryption** system in a **React Native** app using a **custom algorithm** and **Base64 encoding**.
 
-## Get started
+## Features
 
-1. Install dependencies
+✅ Encrypts and decrypts text using a secret key  
+✅ Custom encryption logic (ASCII shift + Base64)  
+✅ Modular & reusable utility functions  
+✅ Simple React Native UI for testing
 
-   ```bash
-   npm install
-   ```
+---
 
-2. Start the app
+## Project Structure
 
-   ```bash
-    npx expo start
-   ```
+/EncryptionApp │── /utils │ ├── encryption.js # Encryption & decryption logic │── App.js # React Native UI │── README.md # Documentation
 
-In the output, you'll find options to open the app in a
+---
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## 🚀 Getting Started
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### ** 1. Install Dependencies**
 
-## Get a fresh project
-
-When you're ready, run:
+### ** 2. Run the App**
 
 ```bash
-npm run reset-project
+npm install buffer
+npx react-native run-android  # For Android
+npx react-native run-ios      # For iOS
+---
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### ** 2. Run the App**
 
-## Learn more
+Encryption Logic
+The text is shifted using the ASCII value of the secret key.
+The encrypted result is Base64 encoded for safe storage.
+Decryption Logic
+The text is Base64 decoded.
+The ASCII shift is reversed using the secret key.
 
-To learn more about developing your project with Expo, look at the following resources:
+### **Usage**
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+**Encryption**
 
-## Join the community
+```bash
+import { encryptText } from "./utils/encryption";
+const secretKey = "MySecretKey";
+const encrypted = encryptText("Hello, World!", secretKey);
+console.log(encrypted);  // Output: Encrypted Base64 string
+---
+```
 
-Join our community of developers creating universal apps.
+**Decryption**
+```bash
+import { decryptText } from "./utils/encryption";
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+const decrypted = decryptText(encrypted, secretKey);
+console.log(decrypted);  // Output: Hello, World!
+```
+### ***Contributing**
+Feel free to fork this repo and submit pull requests!
+```sh
+
+```
