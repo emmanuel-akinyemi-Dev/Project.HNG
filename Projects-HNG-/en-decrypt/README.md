@@ -63,3 +63,5 @@ Feel free to fork this repo and submit pull requests!
 ```sh
 
 ```
+**RunApp(Test)**
+Appetize: 

@@ -9,8 +9,7 @@ import {
   SafeAreaView,
   useColorScheme,
 } from "react-native";
-import { encryptText, decryptText } from "../../utils/encryptor";
-import { error } from "console";
+import { encryptText, decryptText } from "../../utils/encryptor"; 
 
 export default function HomeScreen() {
   const colorScheme = useColorScheme();
